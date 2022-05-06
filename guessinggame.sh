@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 files=$(ls | wc -l)
+call_file () {
+	bash guessinggame.sh
+}
 
 echo How many file are in the current directory?
 read response
@@ -19,7 +22,7 @@ else
 			echo You are below the correct number
 		fi
 		echo Try again
-		bash guessinggame.sh
+		call_file
 		exit
 	done
 
