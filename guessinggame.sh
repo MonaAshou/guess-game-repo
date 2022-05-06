@@ -8,14 +8,20 @@ answer=$files
 
 if [ $response = $answer ]
 then 
-	echo Congratulations your guess is right
+	echo Congratulations your guess is correct!
+	exit 
 else
-	if [ $response -gt $answer ]
-	then 
-		echo You are above the correct number
-	else 
-		echo You are below the correct number
-	fi
-	echo Try again
-	sh guessinggame.sh
+	while [ $response -ne $answer ]; do
+		if [ $response -gt $answer ]
+		then 
+			echo You are above the correct number
+		else 
+			echo You are below the correct number
+		fi
+		echo Try again
+		bash guessinggame.sh
+		exit
+	done
+
+	
 fi
